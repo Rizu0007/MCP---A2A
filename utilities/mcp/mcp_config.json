@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "terminal_server": {
+      "command": "C:\\Users\\eesha\\Documents\\mcp\\MCP---A2A\\venv\\Scripts\\python.exe",
+      "args": [
+        "C:\\Users\\eesha\\Documents\\mcp\\MCP---A2A\\mcp\\servers\\terminal_server\\terminal_server.py"
+      ]
+  },
+  "arithmetic_servers": {
+      "command": "npx",
+      "args": [
+        "mcp-remote",
+        "http://localhost:3000/mcp/"
+      ]
+    
+  }
+}
+}
