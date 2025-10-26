@@ -4,7 +4,7 @@ from a2a.types import AgentSkill, AgentCard, AgentCapabilities
 import click
 from a2a.server.request_handlers import DefaultRequestHandler
 
-from agents.website_builder_simple.agent_executor import WebsiteBuilderSimpleAgentExecutor
+from agents.website_builder.agent_executor import WebsiteBuilderAgentExecutor
 from a2a.server.tasks import InMemoryTaskStore
 from a2a.server.apps import A2AStarletteApplication
 
@@ -19,7 +19,7 @@ def main(host: str, port: int):
      id="website_builder",
      name="Website Builder",
      description="An agent that can build simple websites based on user queries.",
-     tag=["website", "builder", "web development", "HTML", "CSS"],
+     tags=["website", "builder", "web development", "HTML", "CSS"],
      examples=[
             """Create a simple webpage with a header and a footer.""",
             """Create a landing page for a product with a call to action button.""",
@@ -37,7 +37,7 @@ def main(host: str, port: int):
         capabilities=AgentCapabilities(streaming=True),
        )
     request_handler = DefaultRequestHandler(
-          agent_executor=WebsiteBuilderSimpleAgentExecutor(),
+          agent_executor=WebsiteBuilderAgentExecutor(),
         task_store=InMemoryTaskStore()
         )
 

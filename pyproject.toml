@@ -7,5 +7,6 @@ requires-python = ">=3.12"
 dependencies = [
     "a2a-sdk>=0.3.10",
     "fastmcp>=2.3.0rc1",
-    "google-adk>=0.0.1",
+    "uvicorn>=0.38.0",
+    "httpx>=0.28.1",
 ]
