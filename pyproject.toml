@@ -9,4 +9,5 @@ dependencies = [
     "fastmcp>=2.3.0rc1",
     "uvicorn>=0.38.0",
     "httpx>=0.28.1",
+    "asyncclick>=8.3.0.7",
 ]

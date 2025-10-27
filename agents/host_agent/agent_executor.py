@@ -2,7 +2,7 @@ from a2a.server.agent_execution import AgentExecutor, RequestContext
 from a2a.server.events import EventQueue
 from a2a.server.tasks import TaskUpdater
 
-from agents.website_builder.agents import WebsiteBuilderSimple
+from agents.host_agent.agents import HostAgent
 from a2a.utils import (
     new_task,
     new_agent_text_message
@@ -18,15 +18,21 @@ from a2a.types import (
 
 import asyncio
 
-class WebsiteBuilderSimpleAgentExecutor(AgentExecutor):
+class HostAgentExecutor(AgentExecutor):
     """
     Implements the AgentExecutor interface to integrate the 
     website builder simple agent with the A2A framework.
     """
 
     def __init__(self):
-        self.agent = WebsiteBuilderSimple()
-    
+        self.agent = HostAgent()
+
+    async def create(self):
+        """
+        Factory method to create and asynchronously initialize the HostAgentExecutor.
+        """
+        await self.agent.create()
+
     async def execute(self, context: RequestContext, event_queue: EventQueue) -> None:
         """
         Executes the agent with the provided context and event queue.
@@ -69,4 +75,3 @@ class WebsiteBuilderSimpleAgentExecutor(AgentExecutor):
 
     async def cancel(self, request: RequestContext, event_queue: EventQueue) -> Task | None:
         raise ServerError(error=UnsupportedOperationError())
-    
