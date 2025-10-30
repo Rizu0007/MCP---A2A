@@ -16,8 +16,9 @@ from rich.syntax import Syntax
 
 import json
 from typing import Any
-
 from dotenv import load_dotenv
+
+load_dotenv()
 class WebsiteBuilderSimple:
       """
        A simple website builder agent that can create basic web pages 

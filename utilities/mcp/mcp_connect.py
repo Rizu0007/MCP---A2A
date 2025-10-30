@@ -29,8 +29,9 @@ class MCPConnect:
           Loads all the tools from each discovered MCP server
         """
         tools=[]
-        try:
-             for name , server in self.discovery.list_servers().item():
+        for name , server in self.discovery.list_servers().item():
+            try:
+     
                 if server.get("command") == "streamable_http":
                     con=StreamableHTTPServerParams(url=server["arg"][0])
                 else:
@@ -50,9 +51,9 @@ class MCPConnect:
                     print(f"[bold green]Loaded tools from server [cyan]'{name}'[/cyan]:[/bold green] {', '.join(tool_names)}")
                     tools.append(toolset)
             
-        except Exception as e:
-            print(f"[bold red]Error loading tools from server [cyan]'{name}'[/cyan]: {e}[/bold red]")
-            return tools
+                  except Exception as e:
+                    print(f"[bold red]Error loading tools from server [cyan]'{name}'[/cyan]: {e}[/bold red]")
+                   return tools
         
     def get_tools(self)->list[MCPToolset]:
         
