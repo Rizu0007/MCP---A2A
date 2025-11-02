@@ -10,9 +10,7 @@ import httpx
 from a2a.client import A2AClient
 
 class AgentConnector:
-    """
-    Connects to a remote A2A agent and provides a uniform method to delegate tasks
-    """
+   
 
     def __init__(self, agent_card: AgentCard):
         self.agent_card = agent_card

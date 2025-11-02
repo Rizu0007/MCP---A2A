@@ -9,15 +9,7 @@ from a2a.client import A2ACardResolver, A2AClient
 import httpx
 
 class AgentDiscovery:
-    """
-    Discovers A2A Agents by reading a registry file of URLs and
-    querying each one's /.well-known/agent.json endpoint to retrieve
-    an AgentCard
-
-    Attributes:
-        registry_file (str): Path to the agent registry file.
-        base_urls (List[str]): List of base URLs for A2A Agents.
-    """
+    
 
     def __init__(self, registry_file: str = None):
         """
